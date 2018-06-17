@@ -1,0 +1,19 @@
+<div class="show-page">
+
+<% if flash[:notice] %>
+<p style="margin: 30px"><%= flash[:notice] %></p>
+<% end %>
+
+<div style="margin: 30px">
+	<strong>Title:</strong><span><%= @book.title %></span>
+</div>
+
+<div style="margin: 30px">
+	<strong>Body:</strong><span><%= @book.body %></span>
+</div>
+
+<%= link_to "Edit", edit_book_path(@book), class:"edit_#{:id}" %>
+<span>|</span>
+<%= link_to "Back", books_path, class:"back" %>
+
+</div>
