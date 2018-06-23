@@ -20,7 +20,7 @@
     <div class="update-button">
     <%= f.submit 'Update Book' %>
 	</div>
-	<div style="font-size: 12px"><%= link_to "Show", book_path(@book), class:"show_#{:id}" %>
+	<div style="font-size: 12px"><%= link_to "Show", book_path(@book), class:"show_#{@book}" %>
 	<span>|</span>
 	<%= link_to "Back", books_path(@books),class:"back" %>
 	</div>

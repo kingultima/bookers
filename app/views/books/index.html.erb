@@ -19,13 +19,13 @@
 <td><%= book.title %></td>
 <td><%= book.body %></td>
 <td style="width: 43px">
-	<%=link_to "Show",book_path(book.id), class:"show_#{:id}" %>
+	<%=link_to "Show",book_path(book.id), class:"show_#{book.id}" %>
 	</td>
 <td style="width: 30px">
-	<%=link_to "Edit",edit_book_path(book.id), class:"edit_#{:id}" %>
+	<%=link_to "Edit",edit_book_path(book.id), class:"edit_#{book.id}" %>
 	</td>
 <td style="width: 61px">
-	<%=link_to "Destroy",book_path(book.id), class:"destroy_#{:id}", method: :delete, "data-confirm" => "Are you sure?" %>
+	<%=link_to "Destroy",book_path(book.id), class:"destroy_#{book.id}", method: :delete, "data-confirm" => "Are you sure?" %>
 	</td>
 </tr>
 <% end %>

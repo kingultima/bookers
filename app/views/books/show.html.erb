@@ -12,7 +12,7 @@
 	<strong>Body:</strong><span><%= @book.body %></span>
 </div>
 
-<%= link_to "Edit", edit_book_path(@book), class:"edit_#{:id}" %>
+<%= link_to "Edit", edit_book_path(@book), class:"edit_#{@book}" %>
 <span>|</span>
 <%= link_to "Back", books_path, class:"back" %>
 
