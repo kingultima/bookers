@@ -14,22 +14,53 @@
  *= require_self
  */
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: #000;
 }
+.notice {
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+.alert {
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+.log-in, .sign-up {
+	margin: 30px 60px;
+}
+.log-in .field, .sign-up .field {
+	margin: 10px 0;
+}
+.log-in .actions, sign-up .actions {
+	margin: 10px 0;
+}
 /*top-page*/
 .top-page {
-	margin: 30px;
+	width: 100%;
+	margin: 30px 0;
 	font-size: 12px;
+}
+.top-box {
+	width: 500px;
+	margin: 0 auto;
 }
 .top-page h1 {
 	margin: 30px 0;
 }
 .top-page p {
-	margin: 30px;
+	margin: 15px 0;
+}
+.top-log-in, .top-sign-up {
+	width: 400px;
+	margin: 0 auto;
 }
 /*index*/
 .index-page {
