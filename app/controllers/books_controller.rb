@@ -1,6 +1,4 @@
 class BooksController < ApplicationController
-  def top
-  end
 
   def index
       @books = Book.order("id")
@@ -19,7 +17,8 @@ class BooksController < ApplicationController
   end
 
   def show
-  		@book = Book.find(params[:id])
+      @books = Book.order("id")
+  		@book = Book.new
   end
 
   def edit
@@ -47,7 +46,7 @@ class BooksController < ApplicationController
 
   private
   	def book_params
-  		params.require(:book).permit(:title, :body)
+  		params.require(:book).permit(:title, :body, :user_id)
   	end
 
 end

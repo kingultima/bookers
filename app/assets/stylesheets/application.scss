@@ -63,7 +63,7 @@
 	margin: 0 auto;
 }
 /*index*/
-.index-page {
+.index-page, .user-info-page {
 	margin: 30px;
 }
 .index-page h2 {
@@ -75,11 +75,13 @@
 .index-page h5 {
 	margin: 10px 0 0;
 }
+.book_title, .book_body {
+	margin: 10px 0;
+}
 .create-button {
 	margin: 5px 0;
 }
 .table {
-	width: 100%;
 	font-size: 12px;
 }
 .table th {
@@ -90,7 +92,8 @@
 }
 /*edit*/
 .edit-page {
-	margin: 30px;
+	width:500px;
+	margin: 30px auto;
 }
 .edit-page h2 {
 	margin: 10px 0 0;
@@ -105,4 +108,12 @@
 .show-page {
 	margin: 30px;
 	font-size: 12px;
+}
+footer {
+	width: 100%;
+	margin-left: 75%;
+}
+footer .p {
+	font-size: 12px;
+	padding-rigth: 30px;
 }
