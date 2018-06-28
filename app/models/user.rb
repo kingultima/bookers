@@ -9,5 +9,7 @@ class User < ApplicationRecord
   :validatable
 
   has_many :books
-  has_one :info_user
+  attachment :profile_image
+  validates :name, presence: true, length: { in: 2..20 }
+  validates :introduction, length: { maximum: 50 }
 end

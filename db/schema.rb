@@ -10,19 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_26_052813) do
+ActiveRecord::Schema.define(version: 2018_06_24_054927) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "info_users", force: :cascade do |t|
-    t.text "profile_image_id"
-    t.text "introduction"
-    t.string "name_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,6 +31,8 @@ ActiveRecord::Schema.define(version: 2018_06_26_052813) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.text "introduction"
+    t.text "profile_image_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
