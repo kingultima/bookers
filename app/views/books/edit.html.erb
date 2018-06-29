@@ -2,7 +2,6 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6">
-
         <h3><strong>Editing Book</strong></h3>
         <!-- form_for部分 -->
         <%= form_for(@book) do |f| %>
@@ -15,15 +14,11 @@
             </ul>
           </div>
         <% end %>
-
             <strong>Title</strong><br>
             <%= f.text_field :title, class:"book_title  col-xs-12" %>
-
             <strong>Opinion</strong><br>
             <%= f.text_area :body, class:"book_body  col-xs-12" %>
-
             <%= f.submit 'Update Book', class:"btn btn-primary btn-block col-xs-3" %>
-
             <%= link_to "Show", book_path(@book), class:"show_#{@book}" %>
         	<span>|</span>
         	<%= link_to "Back", books_path(@books),class:"back" %>

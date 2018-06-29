@@ -1,8 +1,25 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, :except=>[:top, :about]
+
 	def top
 	end
 
 	def about
+	end
+
+	def index
+		@users = User.all
+		@user = current_user
+		@book = Book.new
+	end
+
+	def show
+		@book = Book.new
+        @user = User.find(params[:id])
+        ## 本の持ち主の情報
+        # @useri = User.find(@booki.user_id)
+
+		## @booki = Book.find(params[:id])
 	end
 
 	def edit
@@ -19,21 +36,13 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def index
-		@users = User.order("id")
-		@user = current_user
-		@book = Book.new
-	end
-
-	def show
-		@user = User.find(params[:id])
-		@book = Book.new
-		@books = User.order("id")
-	end
-
 	private
 
 	def user_params
 	    params.require(:user).permit(:name, :profile_image, :introduction)
 	end
+
+  	def book_params
+  		params.require(:book).permit(:title, :body, :user_id)
+  	end
 end

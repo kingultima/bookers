@@ -1,7 +1,5 @@
 <div class="user-info-page">
-
 	<h2><strong>User info</strong></h2>
-
 	<%= form_for(@user) do |f| %>
 		<% if @user.errors.any? %>
 		  <div id="error_explanation" class="alert alert-danger">
@@ -12,14 +10,11 @@
 		    </ul>
 		  </div>
 		<% end %>
-
     <strong>Name</strong>
     <%= f.text_field :name %>
-
     <div style="margin: 20px 0" ><strong>Image</strong>
     <%= f.attachment_field :profile_image %>
  	</div>
-
     <div style="margin: 20px 0" ><strong>Introduction</strong>
     <%= f.text_area :introduction %>
 	</div>
