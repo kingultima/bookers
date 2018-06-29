@@ -1,19 +1,40 @@
 <div class="show-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <%= render 'users/userinfo', user: @user %>
+         <% if @user == current_user.id %>
+          <div class="row">
+           <%=link_to "",edit_user_path(current_user.id), class:"btn btn-default btn-block glyphicon glyphicon-wrench" %>
+          </div>
+          <% end %>
+          <%= render 'books/form', book: @booki %>
+          </div>
+    <div class="col-sm-9">
+            <h2>Book detail</h2>
+            <table class="table table-striped" ">
+              <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Opinion</th>
+                <th></th>
+                <th></th>
+              </tr>
+               <tr>
+                  <td><%= attachment_image_tag @user, :profile_image, :fill, 50, 50, fallback: image_path('Noimage_image.png'), size: '50x50' %>
+                    <br><%= link_to @user.name , user_path %>
+                  </td>
+                 <td><%= link_to @booki.title, book_path(@user) %></td>
+                 <td><%= @booki.body %></td>
 
-<% if flash[:notice] %>
-<p style="margin: 30px"><%= flash[:notice] %></p>
-<% end %>
+                 <% if @user.id == current_user.id %>
+                 <td><%= link_to "Edit ",edit_book_path(@booki), class:"btn btn-success edit_#{@booki.id} " %></td>
+                 <td><%= link_to "delete ", book_path(@booki), method: :delete, "data-confirm " => "Are you sure? ", class:"btn btn-danger " %></td>
+                <% end %>
 
-<div style="margin: 30px">
-	<strong>Title:</strong><span><%= @book.title %></span>
-</div>
-
-<div style="margin: 30px">
-	<strong>Body:</strong><span><%= @book.body %></span>
-</div>
-
-<%= link_to "Edit", edit_book_path(@book), class:"edit_#{@book}" %>
-<span>|</span>
-<%= link_to "Back", books_path, class:"back" %>
-
+              </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
