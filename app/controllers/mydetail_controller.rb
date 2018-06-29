@@ -1,2 +1,0 @@
-# class MydetailController < ApplicationController
-# end
